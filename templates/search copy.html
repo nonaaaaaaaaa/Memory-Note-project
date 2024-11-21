@@ -1,0 +1,66 @@
+<!-- templates/home.html -->
+{% extends "base.html" %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+    <!-- Main Content Section -->
+    <section class="search-results-container">
+        <h1>Search Results</h1>
+
+        <!-- Memories Results Section -->
+        <div class="memories-results">
+            <h2>Memories</h2>
+            <div class="search-results">
+                <!-- Sample Memory Search Result Item -->
+                {% for memory in memories %}
+                    <div class="search-result-item">
+                        <h3>{{ memory.title }}</h3>
+                        <p>{{ memory.description }}</p>
+                        <a href="#" class="view-details memory-detail" data-memory-id="{{ memory.id }}">View Details</a>
+                    </div>
+                {% endfor %}
+
+                <!-- Add more memory search result items as needed -->
+            </div>
+        </div>
+
+        <!-- Memory Modal Structure -->
+        <div id="memoryModal" class="modal">
+            <div class="modal-content memory-modal-content">
+                <span class="close-button">&times;</span>
+                <div class="photos">
+                    <img src="photo" class="photo_path">
+                </div>
+                <h2>Memory Details</h2>
+                <p id="memory-modal-text">Detailed information about the memory will appear here.</p>
+            </div>
+        </div>
+
+        <!-- Users Results Section -->
+        <div class="users-results">
+            <h2>Users</h2>
+            <div class="search-results">
+                <!-- Sample User Search Result Item -->
+                {% for user in users %}
+                <div class="search-result-item">
+                    <h3>{{ user.username }}</h3>
+                    <p>{{ user.description }}</p>
+                    <a href="#" class="view-details user-detail" data-user-id="{{ user.id }}">View Profile</a>
+                </div>
+                {% endfor %}
+                <!-- Add more user search result items as needed -->
+            </div>
+        </div>
+
+        <!-- User Modal Structure -->
+        <div id="userModal" class="modal">
+            <div class="modal-content user-modal-content">
+                <span class="close-button">&times;</span>
+                <img src="photo" class="photo_path">
+                <h2>User Profile</h2>
+                <p id="user-modal-text">Detailed information about the user will appear here.</p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

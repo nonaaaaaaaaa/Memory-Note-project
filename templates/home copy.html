@@ -1,0 +1,123 @@
+<!-- templates/home.html -->
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <!-- Main Content Section -->
+    <section class="home-container">
+        <!-- Trigger Button -->
+        <button id="openModal" class="open-modal-button">
+            <i class="fas fa-plus-circle"></i> Add Memory
+        </button>
+
+        <!-- Add Memory Modal -->
+        <div id="addMemoryModal" class="modal">
+            <div class="modal-content">
+                <form id="addMemoryForm" action="/add_memory" method="POST">
+                    <!-- Title Input -->
+                    <div class="input-group-input">
+                        <input id="memoryTitle" name="memoryTitle" placeholder="What's your Title?">
+                    </div>
+
+                    <!-- Content Input -->
+                    <div class="input-group-text">
+                        <textarea id="memoryContent" name="memoryContent" rows="4" placeholder="What's on your mind?"></textarea>
+                        <div id="charCount">0/500</div>
+                    </div>
+
+                    <div class="buttons-and-result">
+                        <!-- Action Buttons -->
+                        <div class="action-buttons">
+                            <!-- File Upload -->
+                            <div class="input-group-input-image">
+                                <input type="file" id="imageUpload" name="imageUpload" accept="image/*">
+                            </div>
+
+                            <!-- Share Dropdown -->
+                            <div id="shareButtonResult">
+                                <button type="button" class="dropdown-button" id="shareButton">
+                                    <i class="fas fa-share-alt"></i> <span>Just Me</span>
+                                    <i class="fas fa-chevron-right dropdown-arrow"></i>
+                                </button>
+                                <ul class="dropdown-menu" id="shareDropdown">
+                                    <li data-value="self"><i class="fas fa-lock"></i>Just Me</li>
+                                    <li data-value="friends"><i class="fas fa-user-friends"></i>Friends</li>
+                                    <li data-value="everyone"><i class="fas fa-globe"></i>Everyone</li>
+                                </ul>
+                            </div>
+
+                            <!-- Status Dropdown -->
+                            <div id="statusButtonResult">
+                                <button type="button" class="dropdown-button" id="statusButton">
+                                    <i class="fas fa-globe"></i> <span>Draft</span>
+                                    <i class="fas fa-chevron-right dropdown-arrow"></i>
+                                </button>
+                                <ul class="dropdown-menu" id="statusDropdown">
+                                    <li data-value="draft">Draft</li>
+                                    <li data-value="public">Public</li>
+                                    <li data-value="private">Private</li>
+                                    <li data-value="schedule">Schedule</li>
+                                </ul>
+                            </div>
+
+                            <!-- Calendar Buttons -->
+                            <button type="button" class="calendar-button" id="calendarButton">
+                                <i class="fas fa-calendar-alt"></i> Calendar
+                            </button>
+                        </div>
+                        <div class="results">
+                            <div id="schedule-container" class="scheduler">
+                                <h5>Schedule as public</h5>
+                                <div id="schedule-options">
+                                    <input type="date" id="date" name="date">
+                                    <input type="time" id="time" name="time">
+                                </div>
+
+                                <!-- Confirm Button -->
+                                <div class="schedule-confirm">
+                                    <button id="schedule-button" type="button">Schedule</button>
+                                </div>
+                            </div>
+                            <div id="calendar-container" class="calendar">
+                                <h5>Calender as public</h5>
+                                <div id="calendar-options">
+                                    <input type="date" id="calendardate" name="date">
+                                    <input type="time" id="calendartime" name="time">
+                                </div>
+                            </div>
+                            <div id="class_public" class="class_public">
+                                <h4>Everyone can see it.</h4>
+                            </div>
+                            <div id="class_private" class="class_private">
+                                <h4>Will not post, just you can see it.</h4>
+                            </div>
+                            <div id="class_draft" class="class_draft">
+                                <h4>Under Review from you</h4>
+                            </div>
+                            <div id="class_just" class="class_just">
+                                <h4>just if will public, just you see it</h4>
+                            </div>
+                            <div id="class_friends" class="class_friends">
+                                <h4>just if will public, just my Friends</h4>
+                            </div>
+                            <div id="class_everyone" class="class_everyone">
+                                <h4>Everyone can see it.</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Buttons -->
+                    <div class="input-group-button">
+                        <button type="submit" class="post-button">
+                            <i class="fas fa-paper-plane"></i> Post
+                        </button>
+                        <button type="button" class="preview-button">
+                            <i class="fas fa-eye"></i> Preview
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

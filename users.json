@@ -1,0 +1,58 @@
+[
+    {
+        "id": 0,
+        "fullname": "me",
+        "username": "meme",
+        "email": "feway75844@exeneli.com",
+        "dob": "4/8/2011",
+        "password": "scrypt:32768:8:1$SMjfnpXXb2cUVQUl$d56896df5f8c94a33e632589c937ea2d0f458e30b2b05ceafbee2daada1c89433a36dc4bad9c699fffaefa39942780193183770404073fd66808e0eb610467cc",
+        "confirmpass": "000",
+        "session_id": "1111",
+        "image": "/static/image/download.png",
+        "description": "my name it meme",
+        "following": [],
+        "followers": [],
+        "memories": {
+            "public": [
+                23
+            ],
+            "liked": [
+                22,
+                21,
+                19
+            ],
+            "draft": [],
+            "private": []
+        },
+        "my_comments": []
+    },
+    {
+        "id": 1,
+        "fullname": "wolverine",
+        "username": "wolverine",
+        "email": "wolverine@gmail.com",
+        "dob": "25/3/2004",
+        "password": "scrypt:32768:8:1$3DmuHUZKexEVrc90$2bdab445ebcfa9f47ac18461d942fc3da337b0182fd0558774aad49386ef1d8fc3b42a5b9888970bb270079858e6287d0d48f945a18ae01b5d18f5064838fe14",
+        "confirmpass": "222",
+        "session_id": "0000",
+        "image": "/static/uploads/Picsart_23-08-26_05-31-32-831.jpg",
+        "description": "my name it meme",
+        "following": [],
+        "followers": [],
+        "memories": {
+            "public": [
+                21,
+                22
+            ],
+            "liked": [
+                19,
+                21,
+                16,
+                0
+            ],
+            "draft": [],
+            "private": []
+        },
+        "my_comments": []
+    }
+]
